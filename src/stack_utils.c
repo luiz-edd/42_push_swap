@@ -6,11 +6,12 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 13:46:23 by leduard2          #+#    #+#             */
-/*   Updated: 2024/01/29 18:11:39 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:32:16 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 void	print_stack(t_stack **head, char *stack_name)
 {
@@ -35,13 +36,25 @@ void	print_stack(t_stack **head, char *stack_name)
 
 t_stack	*get_last_node(t_stack *stack)
 {
-	
 	while (stack && stack->next != NULL)
 		stack = stack->next;
 	return (stack);
 }
 
-void	add_node(t_stack **head, t_stack *new)
+int	get_stack_len(t_stack *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack)
+	{
+		stack = stack->next;
+		i++;
+	}
+	return (i);
+}
+
+void	add_node(t_stack *head, t_stack *new)
 {
 	t_stack	*stack;
 
@@ -82,7 +95,7 @@ t_stack	*create_stack(int argc, char **argv)
 		if (stack_head == NULL)
 			stack_head = new_stack((int)num);
 		else
-			add_node(&stack_head, new_stack((int)num));
+			add_node(stack_head, new_stack((int)num));
 	}
 	return (stack_head);
 }
