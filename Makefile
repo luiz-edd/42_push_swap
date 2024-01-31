@@ -5,7 +5,7 @@ CC 				= cc $(CFLAGS)
 LIBFT			= lib/libft/libft.a
 LIBFT_PATH		= lib/libft/
 
-HEADER			= -I lib/libft/src src/
+HEADER			= -I lib/libft/src -I src/
 
 SRC_FILES		= main.c free_and_exit.c index.c stack_utils.c
 OBJ_FILES		= $(SRC_FILES:%.c=%.o)
@@ -42,3 +42,8 @@ fclean: clean
 	@make -C $(LIBFT_PATH) fclean
 
 re: fclean all
+
+test: all
+	./push_swap 3 1 2
+
+.PHONY: all clean fclean re

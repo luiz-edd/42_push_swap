@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 12:40:02 by leduard2          #+#    #+#             */
-/*   Updated: 2024/01/31 17:02:58 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:31:18 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void				exit_error(t_stack **stack_a, t_stack **stack_b);
 // stack_utils
 t_stack				*create_stack(int argc, char **argv);
 int					get_stack_len(t_stack *stack);
-void				print_stack(t_stack **head, char *stack_name);
+void				print_stack(t_stack *stack, char *stack_name);
 
 // index
 void				assign_index(t_stack *stack, int stack_size);

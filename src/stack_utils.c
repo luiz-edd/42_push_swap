@@ -6,29 +6,24 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 13:46:23 by leduard2          #+#    #+#             */
-/*   Updated: 2024/01/31 17:32:16 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:49:23 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void	print_stack(t_stack **head, char *stack_name)
+void	print_stack(t_stack *stack, char *stack_name)
 {
-	t_stack	*stack;
-
-	stack = *head;
 	ft_printf("%s\n", stack_name);
-	while (stack)
+	while (stack != NULL)
 	{
-		printf("value: %5d\nindex: %5d\nposition: %5d\ntarget_position: \
-				%5d\ncost_a: %5d\ncost_b %5d\n",
-				stack->value,
-				stack->index,
-				stack->position,
-				stack->target_position,
-				stack->cost_a,
-				stack->cost_b);
+		printf("%20d :value \n", stack->value);
+		printf("%20d :index \n", stack->index);
+		printf("%20d :position \n", stack->position);
+		printf("%20d :target_position \n", stack->target_position);
+		printf("%20d :cost_a \n", stack->cost_a);
+		printf("%20d :cost_b \n", stack->cost_b);
 		ft_printf("********************************************************\n");
 		stack = stack->next;
 	}
@@ -69,7 +64,7 @@ t_stack	*new_stack(int value)
 
 	new = (t_stack *)malloc(sizeof(t_stack));
 	new->value = value;
-	new->index = 0;
+	new->index = -1;
 	new->position = -1;
 	new->target_position = -1;
 	new->cost_a = -1;
@@ -96,6 +91,7 @@ t_stack	*create_stack(int argc, char **argv)
 			stack_head = new_stack((int)num);
 		else
 			add_node(stack_head, new_stack((int)num));
+		i++;
 	}
 	return (stack_head);
 }

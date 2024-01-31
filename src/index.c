@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 17:59:43 by leduard2          #+#    #+#             */
-/*   Updated: 2024/01/31 17:13:23 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:50:12 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	assign_index(t_stack *stack, int stack_size)
 
 	
 	head = stack;
-	while (stack_size--)
+	while (--stack_size >= 0)
 	{
 		value = MIN_INT;
 		while (stack != NULL)
 		{
-			if (stack->value >= value && stack->index != -1)
+			if (stack->value >= value && stack->index == -1)
 			{
 				value = stack->value;
 				high = stack;
@@ -34,6 +34,6 @@ void	assign_index(t_stack *stack, int stack_size)
 			stack = stack->next;
 		}
 		stack = head;
-		high->index = stack_size + 1;
+		high->index = stack_size;
 	}
 }
