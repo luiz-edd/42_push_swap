@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 12:40:02 by leduard2          #+#    #+#             */
-/*   Updated: 2024/01/31 18:31:18 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/02/01 19:07:27 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,28 @@ void				exit_error(t_stack **stack_a, t_stack **stack_b);
 t_stack				*create_stack(int argc, char **argv);
 int					get_stack_len(t_stack *stack);
 void				print_stack(t_stack *stack, char *stack_name);
+t_stack				*get_last_node(t_stack *stack);
 
 // index
 void				assign_index(t_stack *stack, int stack_size);
+
+// swap
+void				sa(t_stack **head);
+void				sb(t_stack **head);
+void				ss(t_stack **head_a, t_stack **head_b);
+
+// push
+void				pa(t_stack **head_a, t_stack **head_b);
+void				pb(t_stack **head_a, t_stack **head_b);
+
+//rotate
+void				ra(t_stack **head_a);
+void				rb(t_stack **head_b);
+void				rr(t_stack **head_a, t_stack **head_b);
+
+//reverse rotate
+void				rra(t_stack **head);
+void				rrb(t_stack **head);
+void				rrr(t_stack **head_a, t_stack **head_b);
 
 #endif

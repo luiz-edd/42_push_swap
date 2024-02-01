@@ -6,28 +6,11 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 13:46:23 by leduard2          #+#    #+#             */
-/*   Updated: 2024/01/31 18:49:23 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/02/01 10:06:25 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-
-void	print_stack(t_stack *stack, char *stack_name)
-{
-	ft_printf("%s\n", stack_name);
-	while (stack != NULL)
-	{
-		printf("%20d :value \n", stack->value);
-		printf("%20d :index \n", stack->index);
-		printf("%20d :position \n", stack->position);
-		printf("%20d :target_position \n", stack->target_position);
-		printf("%20d :cost_a \n", stack->cost_a);
-		printf("%20d :cost_b \n", stack->cost_b);
-		ft_printf("********************************************************\n");
-		stack = stack->next;
-	}
-}
 
 t_stack	*get_last_node(t_stack *stack)
 {

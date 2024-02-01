@@ -7,7 +7,15 @@ LIBFT_PATH		= lib/libft/
 
 HEADER			= -I lib/libft/src -I src/
 
-SRC_FILES		= main.c free_and_exit.c index.c stack_utils.c
+SRC_FILES		= main.c \
+				  free_and_exit.c \
+				  index.c \
+				  stack_utils.c \
+				  swap.c \
+				  push.c \
+				  rotate.c \
+				  reverse_rotate.c
+
 OBJ_FILES		= $(SRC_FILES:%.c=%.o)
 
 SRC_FOLDER 		= src/
@@ -44,6 +52,6 @@ fclean: clean
 re: fclean all
 
 test: all
-	./push_swap 3 1 2
+	clear && ./push_swap 3 1 2
 
 .PHONY: all clean fclean re

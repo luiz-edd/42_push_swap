@@ -1,0 +1,50 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 15:27:54 by leduard2          #+#    #+#             */
+/*   Updated: 2024/02/01 15:45:07 by leduard2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+static int	reverse_rotate(t_stack **head)
+{
+	t_stack	*tmp;
+	t_stack	*last;
+
+	if (head == NULL || *head == NULL || (*head)->next == NULL)
+		return (0);
+	last = get_last_node(*head);
+	tmp = *head;
+	*head = last;
+	last->prev->next = NULL;
+	(*head)->next = tmp;
+	(*head)->prev = NULL;
+	return (1);
+}
+
+void	rra(t_stack **head)
+{
+	if (reverse_rotate(head))
+		ft_printf("rra\n");
+}
+
+void	rrb(t_stack **head)
+{
+	if (reverse_rotate(head))
+		ft_printf("rrb\n");
+}
+
+void	rrr(t_stack **head_a, t_stack **head_b)
+{
+	if (head_a == NULL || *head_a == NULL || (*head_a)->next == NULL)
+		return ;
+	if (head_b == NULL || *head_b == NULL || (*head_b)->next == NULL)
+		return ;
+	ft_printf("rrb\n");
+}
