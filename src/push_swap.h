@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 12:40:02 by leduard2          #+#    #+#             */
-/*   Updated: 2024/02/01 19:07:27 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/02/02 15:53:51 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,8 @@ void				rr(t_stack **head_a, t_stack **head_b);
 void				rra(t_stack **head);
 void				rrb(t_stack **head);
 void				rrr(t_stack **head_a, t_stack **head_b);
+
+//sort_3
+void				sort_3(t_stack **stack);
 
 #endif

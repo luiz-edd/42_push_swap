@@ -14,7 +14,8 @@ SRC_FILES		= main.c \
 				  swap.c \
 				  push.c \
 				  rotate.c \
-				  reverse_rotate.c
+				  reverse_rotate.c \
+				  sort_3.c
 
 OBJ_FILES		= $(SRC_FILES:%.c=%.o)
 

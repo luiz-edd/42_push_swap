@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 12:23:02 by leduard2          #+#    #+#             */
-/*   Updated: 2024/02/01 19:29:14 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:27:08 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,9 @@ void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 		if (stack_size == 2)
 			sa(stack_a);
 		else if(stack_size == 3)
-			
+			sort_3(stack_a);
+		else
+			sort(stack_a, stack_b, stack_size);
 	}
 }
 
