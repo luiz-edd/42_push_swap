@@ -15,7 +15,9 @@ SRC_FILES		= main.c \
 				  push.c \
 				  rotate.c \
 				  reverse_rotate.c \
-				  sort_3.c
+				  sort_3.c \
+				  sort.c \
+				  position.c
 
 OBJ_FILES		= $(SRC_FILES:%.c=%.o)
 
@@ -53,6 +55,6 @@ fclean: clean
 re: fclean all
 
 test: all
-	clear && ./push_swap 3 1 2
+	clear && ./push_swap 5 4 3 2 1 0
 
 .PHONY: all clean fclean re
