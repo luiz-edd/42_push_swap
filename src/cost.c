@@ -65,6 +65,7 @@ void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 			cost_b = tmp_b->cost_b;
 			cheapest = abs_cost;
 		}
+		tmp_b = tmp_b->next;
 	}
 	move(stack_a, stack_b, cost_a, cost_b);
 }

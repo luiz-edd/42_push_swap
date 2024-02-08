@@ -36,6 +36,9 @@ int					get_stack_len(t_stack *stack);
 void				print_stack(t_stack *stack, char *stack_name);
 t_stack				*get_last_node(t_stack *stack);
 
+// main
+int					is_sorted(t_stack *stack);
+
 // index
 void				assign_index(t_stack *stack, int stack_size);
 
@@ -67,9 +70,14 @@ void				sort(t_stack **stack_a, t_stack **stack_b,
 
 // position
 void				get_target_position(t_stack **stack_a, t_stack **stack_b);
+void				get_position(t_stack *stack);
 
-//cost
-void	get_cost(t_stack *stack_a, t_stack *stack_b);
-void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b);
+// cost
+void				get_cost(t_stack *stack_a, t_stack *stack_b);
+void				do_cheapest_move(t_stack **stack_a, t_stack **stack_b);
+
+// move
+void				move(t_stack **stack_a, t_stack **stack_b, int cost_a,
+						int cost_b);
 
 #endif

@@ -18,7 +18,8 @@ SRC_FILES		= main.c \
 				  sort_3.c \
 				  sort.c \
 				  position.c \
-				  cost.c
+				  cost.c \
+				  move.c
 
 OBJ_FILES		= $(SRC_FILES:%.c=%.o)
 
@@ -56,6 +57,6 @@ fclean: clean
 re: fclean all
 
 test: all
-	clear && ./push_swap 5 4 3 2 1 0
+	clear && ./push_swap 5 4 3 2 1 0 89 49 -2 -323 -43 84 -10
 
 .PHONY: all clean fclean re
