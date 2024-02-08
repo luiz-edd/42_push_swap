@@ -48,24 +48,28 @@ void				ss(t_stack **head_a, t_stack **head_b);
 void				pa(t_stack **head_a, t_stack **head_b);
 void				pb(t_stack **head_a, t_stack **head_b);
 
-//rotate
+// rotate
 void				ra(t_stack **head_a);
 void				rb(t_stack **head_b);
 void				rr(t_stack **head_a, t_stack **head_b);
 
-//reverse rotate
+// reverse rotate
 void				rra(t_stack **head);
 void				rrb(t_stack **head);
 void				rrr(t_stack **head_a, t_stack **head_b);
 
-//sort_3
+// sort_3
 void				sort_3(t_stack **stack);
 
-//sort
+// sort
 void				sort(t_stack **stack_a, t_stack **stack_b,
 						int stack_a_size);
 
-//position
+// position
+void				get_target_position(t_stack **stack_a, t_stack **stack_b);
 
+//cost
+void	get_cost(t_stack *stack_a, t_stack *stack_b);
+void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b);
 
 #endif

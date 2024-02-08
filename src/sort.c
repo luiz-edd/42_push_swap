@@ -35,13 +35,17 @@ void	push_all_save_three(t_stack **stack_a, t_stack **stack_b,
 		i++;
 	}
 }
-
 void	sort(t_stack **stack_a, t_stack **stack_b, int stack_a_size)
 {
 	push_all_save_three(stack_a, stack_b, stack_a_size);
 	sort_3(stack_a);
-	while(*stack_b)
-	{
-		
-	}
+
+	sa(stack_a);
+	pb(stack_a, stack_b);
+	rb(stack_b);
+	pa(stack_a, stack_b);
+
+	get_target_position(stack_a, stack_b);
+	get_cost(*stack_a, *stack_b);
+	do_cheapest_move(stack_a, stack_b);
 }

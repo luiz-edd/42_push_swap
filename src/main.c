@@ -19,9 +19,6 @@
 
 int	is_sorted(t_stack *stack)
 {
-	int	current;
-
-	current = MIN_INT;
 	while (stack->next)
 	{
 		if (stack->value > stack->next->value)
@@ -95,6 +92,7 @@ int	main(int argc, char **argv)
 	stack_size = get_stack_len(stack_a);
 	printf("%d\n", stack_size);
 	assign_index(stack_a, stack_size);
+	
 	push_swap(&stack_a, &stack_b, stack_size);
 	print_stack(stack_a, "stack_a");
 	print_stack(stack_b, "stack_b");
