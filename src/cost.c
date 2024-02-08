@@ -48,11 +48,11 @@ int	get_absolute_cost(int a, int b)
 
 void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *tmp_b;
-	int cheapest;
-	int cost_a;
-	int cost_b;
-	int abs_cost;
+	t_stack	*tmp_b;
+	int		cheapest;
+	int		cost_a;
+	int		cost_b;
+	int		abs_cost;
 
 	tmp_b = *stack_b;
 	cheapest = MAX_INT;
