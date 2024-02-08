@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 12:40:02 by leduard2          #+#    #+#             */
-/*   Updated: 2024/02/05 12:37:14 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/02/08 15:22:13 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void				sort_3(t_stack **stack);
 // sort
 void				sort(t_stack **stack_a, t_stack **stack_b,
 						int stack_a_size);
+t_stack				*get_minimum_index(t_stack *stack);
 
 // position
 void				get_target_position(t_stack **stack_a, t_stack **stack_b);

@@ -60,3 +60,39 @@ test: all
 	clear && ./push_swap 5 4 3 2 1 0 89 49 -2 -323 -43 84 -10
 
 .PHONY: all clean fclean re
+
+test2: all
+	$(eval ARG = $(shell shuf -i 0-100 -n 2))
+	./push_swap $(ARG) | ./checker_linux $(ARG)
+	@echo -n "Instructions: "
+	@./push_swap $(ARG) | wc -l
+
+test3: all    
+	$(eval ARG = $(shell shuf -i 0-100 -n 3))
+	./push_swap $(ARG) | ./checker_linux $(ARG)
+	@echo -n "Instructions: "
+	@./push_swap $(ARG) | wc -l
+
+test10: all    
+	$(eval ARG = $(shell shuf -i 0-100 -n 10))
+	./push_swap $(ARG) | ./checker_linux $(ARG)
+	@echo -n "Instructions: "
+	@./push_swap $(ARG) | wc -l
+
+test100: all
+	$(eval ARG = $(shell shuf -i 0-5000 -n 100))
+	./push_swap $(ARG) | ./checker_linux $(ARG)
+	@echo -n "Instructions: "
+	@./push_swap $(ARG) | wc -l
+
+test500: all    
+	$(eval ARG = $(shell shuf -i 0-5000 -n 500))
+	./push_swap $(ARG) | ./checker_linux $(ARG)
+	@echo -n "Instructions: "
+	@./push_swap $(ARG) | wc -l
+
+mytest500: all    
+	$(eval ARG = $(shell shuf -i 0-5000 -n 500))
+	./push_swap $(ARG) | ./checker $(ARG)
+	@echo -n "Instructions: "
+	@./push_swap $(ARG) | wc -l
