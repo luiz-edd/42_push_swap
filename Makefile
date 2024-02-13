@@ -19,7 +19,8 @@ SRC_FILES		= main.c \
 				  sort.c \
 				  position.c \
 				  cost.c \
-				  move.c
+				  move.c \
+				  validate_args.c
 
 OBJ_FILES		= $(SRC_FILES:%.c=%.o)
 
@@ -86,7 +87,7 @@ test100: all
 	@./push_swap $(ARG) | wc -l
 
 test500: all    
-	$(eval ARG = $(shell shuf -i 0-5000 -n 500))
+	$(eval ARG = $(shell shuf -i 0-5000 -n 10000))
 	./push_swap $(ARG) | ./checker_linux $(ARG)
 	@echo -n "Instructions: "
 	@./push_swap $(ARG) | wc -l
@@ -96,3 +97,4 @@ mytest500: all
 	./push_swap $(ARG) | ./checker $(ARG)
 	@echo -n "Instructions: "
 	@./push_swap $(ARG) | wc -l
+

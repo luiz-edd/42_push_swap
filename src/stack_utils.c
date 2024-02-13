@@ -57,19 +57,21 @@ t_stack	*new_stack(int value)
 	return (new);
 }
 
-t_stack	*create_stack(int argc, char **argv)
+t_stack	*create_stack(char **argv)
 {
-	t_stack *stack_head;
-	int i;
-	long num;
+	t_stack	*stack_head;
+	int		i;
+	int		args_quantity;
+	long	num;
 
-	i = 1;
+	args_quantity = 0;
+	while (argv[args_quantity] != NULL)
+		args_quantity++;
+	i = 0;
 	stack_head = NULL;
-	while (i < argc)
+	while (i < args_quantity)
 	{
 		num = ft_atol(argv[i]);
-		if (num > MAX_INT || num < MIN_INT)
-			exit_error(&stack_head, NULL);
 		if (stack_head == NULL)
 			stack_head = new_stack((int)num);
 		else

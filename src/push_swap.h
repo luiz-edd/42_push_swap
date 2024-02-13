@@ -31,7 +31,7 @@ typedef struct s_stack
 void				exit_error(t_stack **stack_a, t_stack **stack_b);
 
 // stack_utils
-t_stack				*create_stack(int argc, char **argv);
+t_stack				*create_stack(char **argv);
 int					get_stack_len(t_stack *stack);
 void				print_stack(t_stack *stack, char *stack_name);
 t_stack				*get_last_node(t_stack *stack);
@@ -81,5 +81,8 @@ void				do_cheapest_move(t_stack **stack_a, t_stack **stack_b);
 // move
 void				move(t_stack **stack_a, t_stack **stack_b, int cost_a,
 						int cost_b);
+
+// validate args
+char				**validate_args(int argc, char **argv);
 
 #endif

@@ -26,7 +26,8 @@ static int	swap(t_stack **head)
 	(*head)->next = a;
 	a->next = tmp;
 	a->prev = (*head);
-	tmp->prev = a;
+	if (tmp != NULL)
+		tmp->prev = a;
 	return (1);
 }
 

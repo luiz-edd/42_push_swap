@@ -78,8 +78,8 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 	int		stack_size;
 
-	validate_args(argc, argv);
-	stack_a = create_stack(argc, argv);
+	argv = validate_args(argc, argv);
+	stack_a = create_stack(argv);
 	stack_b = NULL;
 	stack_size = get_stack_len(stack_a);
 	assign_index(stack_a, stack_size);
