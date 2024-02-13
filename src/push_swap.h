@@ -37,10 +37,11 @@ void				print_stack(t_stack *stack, char *stack_name);
 t_stack				*get_last_node(t_stack *stack);
 
 // main
-int					is_sorted(t_stack *stack);
 
 // index
 void				assign_index(t_stack *stack, int stack_size);
+t_stack				*get_minimum_index(t_stack *stack);
+int					find_highest_index(t_stack *stack);
 
 // swap
 void				sa(t_stack **head);
@@ -63,11 +64,11 @@ void				rrr(t_stack **head_a, t_stack **head_b);
 
 // sort_3
 void				sort_3(t_stack **stack);
+int					is_sorted(t_stack *stack);
 
 // sort
 void				sort(t_stack **stack_a, t_stack **stack_b,
 						int stack_a_size);
-t_stack				*get_minimum_index(t_stack *stack);
 
 // position
 void				get_target_position(t_stack **stack_a, t_stack **stack_b);

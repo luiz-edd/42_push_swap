@@ -12,6 +12,17 @@
 
 #include "push_swap.h"
 
+int	is_sorted(t_stack *stack)
+{
+	while (stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}
+
 static void	shift_stack(t_stack **stack)
 {
 	int	lowest_pos;
@@ -20,12 +31,12 @@ static void	shift_stack(t_stack **stack)
 	// t_stack *node_0;
 	stack_size = get_stack_len(*stack);
 	lowest_pos = get_minimum_index(*stack)->position;
-	while((*stack)->index != 0)
-	{
-		// ft_printf("index: %d\n",(*stack)->index);
-		ra(stack);
-	}
-	// ft_printf("index: %d\n",(*stack)->index);
+	if (lowest_pos > stack_size / 2)
+		while ((*stack)->index != 0)
+			rra(stack);
+	else
+		while ((*stack)->index != 0)
+			ra(stack);
 }
 
 void	push_all_save_three(t_stack **stack_a, t_stack **stack_b,

@@ -12,23 +12,7 @@
 
 #include "push_swap.h"
 
-t_stack	*get_minimum_index(t_stack *stack)
-{
-	int		index;
-	t_stack	*node;
 
-	index = MAX_INT;
-	while (stack)
-	{
-		if (stack->index < index)
-		{
-			index = stack->index;
-			node = stack;
-		}
-		stack = stack->next;
-	}
-	return (node);
-}
 
 int	get_target(t_stack **stack_a, int b_idx)
 {

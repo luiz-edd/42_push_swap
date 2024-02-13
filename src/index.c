@@ -15,11 +15,10 @@
 // 5 20 35 90 2 -1
 void	assign_index(t_stack *stack, int stack_size)
 {
-	t_stack *head;
-	t_stack *high;
-	int value;
+	t_stack	*head;
+	t_stack	*high;
+	int		value;
 
-	
 	head = stack;
 	while (--stack_size >= 0)
 	{
@@ -36,4 +35,36 @@ void	assign_index(t_stack *stack, int stack_size)
 		stack = head;
 		high->index = stack_size;
 	}
+}
+
+int	find_highest_index(t_stack *stack)
+{
+	int	highest;
+
+	highest = -1;
+	while (stack)
+	{
+		if (stack->index > highest)
+			highest = stack->index;
+		stack = stack->next;
+	}
+	return (highest);
+}
+
+t_stack	*get_minimum_index(t_stack *stack)
+{
+	int		index;
+	t_stack	*node;
+
+	index = MAX_INT;
+	while (stack)
+	{
+		if (stack->index < index)
+		{
+			index = stack->index;
+			node = stack;
+		}
+		stack = stack->next;
+	}
+	return (node);
 }
