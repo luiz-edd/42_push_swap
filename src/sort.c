@@ -28,7 +28,6 @@ static void	shift_stack(t_stack **stack)
 	int	lowest_pos;
 	int	stack_size;
 
-	// t_stack *node_0;
 	stack_size = get_stack_len(*stack);
 	lowest_pos = get_minimum_index(*stack)->position;
 	if (lowest_pos > stack_size / 2)
@@ -66,6 +65,7 @@ void	push_all_save_three(t_stack **stack_a, t_stack **stack_b,
 		stack_size--;
 	}
 }
+
 void	sort(t_stack **stack_a, t_stack **stack_b, int stack_a_size)
 {
 	push_all_save_three(stack_a, stack_b, stack_a_size);

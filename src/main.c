@@ -78,6 +78,7 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 	int		stack_size;
 
+	validate_args(argc, argv);
 	stack_a = create_stack(argc, argv);
 	stack_b = NULL;
 	stack_size = get_stack_len(stack_a);
