@@ -86,7 +86,7 @@ test100: all
 	@./push_swap $(ARG) | wc -l
 
 test500: all    
-	$(eval ARG = $(shell shuf -i 0-5000 -n 500))
+	$(eval ARG = $(shell shuf -i 0-5000 -n 5000))
 	./push_swap $(ARG) | ./checker_linux $(ARG)
 	@echo -n "Instructions: "
 	@./push_swap $(ARG) | wc -l

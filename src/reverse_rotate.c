@@ -25,6 +25,7 @@ static int	reverse_rotate(t_stack **head)
 	last->prev->next = NULL;
 	(*head)->next = tmp;
 	(*head)->prev = NULL;
+	tmp->prev = (*head);
 	return (1);
 }
 
@@ -46,5 +47,7 @@ void	rrr(t_stack **head_a, t_stack **head_b)
 		return ;
 	if (head_b == NULL || *head_b == NULL || (*head_b)->next == NULL)
 		return ;
-	ft_printf("rrb\n");
+	reverse_rotate(head_a);
+	reverse_rotate(head_b);
+	ft_printf("rrr\n");
 }
