@@ -13,12 +13,6 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-// void push_swap(t_stack *stack, int stack_size)
-// {
-// }
-
-
-
 void	print_stack(t_stack *stack, char *stack_name)
 {
 	int	i;
@@ -83,8 +77,6 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	stack_size = get_stack_len(stack_a);
 	assign_index(stack_a, stack_size);
-	
 	push_swap(&stack_a, &stack_b, stack_size);
-	// print_stack(stack_a, "stack_a");
-	// print_stack(stack_b, "stack_b");
+	exit_success();
 }

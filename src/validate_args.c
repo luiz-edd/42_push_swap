@@ -12,16 +12,13 @@ static void	verify_digits(char **argv)
 	{
 		j = 0;
 		if (argv[i][j] == '\0')
-			exit_error(NULL, NULL);
+			exit_error();
 		while (argv[i][j])
 		{
 			if (argv[i][j] == '+' || argv[i][j] == '-')
 				j++;
 			if (ft_isdigit(argv[i][j]) != 1)
-			{
-				// free(argv);
-				exit_error(NULL, NULL);
-			}
+				exit_error();
 			j++;
 		}
 		i++;
@@ -34,7 +31,7 @@ static void	verify_int_size(char *str)
 
 	num = ft_atol(str);
 	if (num > MAX_INT || num < MIN_INT)
-		exit_error(NULL, NULL);
+		exit_error();
 }
 
 static void	verify_duplicates(char **argv)
@@ -51,10 +48,7 @@ static void	verify_duplicates(char **argv)
 		while (argv[j])
 		{
 			if (ft_atol(argv[i]) == ft_atol(argv[j]))
-			{
-				// free(argv);
-				exit_error(NULL, NULL);
-			}
+				exit_error();
 			j++;
 		}
 		i++;
@@ -64,13 +58,16 @@ static void	verify_duplicates(char **argv)
 char	**validate_args(int argc, char **argv)
 {
 	if (argc < 2)
-		exit_error(NULL, NULL);
+		exit_error();
 	if (argc == 2)
+	{
 		argv = ft_split(argv[1], ' ');
+		ft_lstadd_back_arr(get_lst(), (void ***)&argv);
+	}
 	else
 		argv = argv + 1;
 	if (argv[0] == NULL)
-		exit_error(NULL, NULL);
+		exit_error();
 	verify_digits(argv);
 	verify_duplicates(argv);
 	return (argv);

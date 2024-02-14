@@ -12,6 +12,19 @@
 
 #include "push_swap.h"
 
+void	sort_3(t_stack **stack)
+{
+	int	highest;
+
+	highest = find_highest_index(*stack);
+	if ((*stack)->index == highest)
+		ra(stack);
+	else if ((*stack)->next->index == highest)
+		rra(stack);
+	if ((*stack)->index > (*stack)->next->index)
+		sa(stack);
+}
+
 int	is_sorted(t_stack *stack)
 {
 	while (stack->next)

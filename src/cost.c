@@ -8,6 +8,7 @@ int	ft_abs(int num)
 		return (-num);
 	return (num);
 }
+
 void	get_cost(t_stack *stack_a, t_stack *stack_b)
 {
 	int	size_a;

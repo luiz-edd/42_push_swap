@@ -28,15 +28,16 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }					t_stack;
 
-void				exit_error(t_stack **stack_a, t_stack **stack_b);
-
 // stack_utils
 t_stack				*create_stack(char **argv);
 int					get_stack_len(t_stack *stack);
 void				print_stack(t_stack *stack, char *stack_name);
 t_stack				*get_last_node(t_stack *stack);
 
-// main
+// free_and_exit
+void				exit_error(void);
+void				exit_success(void);
+t_list				**get_lst(void);
 
 // index
 void				assign_index(t_stack *stack, int stack_size);
@@ -62,13 +63,11 @@ void				rra(t_stack **head);
 void				rrb(t_stack **head);
 void				rrr(t_stack **head_a, t_stack **head_b);
 
-// sort_3
-void				sort_3(t_stack **stack);
-int					is_sorted(t_stack *stack);
-
 // sort
 void				sort(t_stack **stack_a, t_stack **stack_b,
 						int stack_a_size);
+void				sort_3(t_stack **stack);
+int					is_sorted(t_stack *stack);
 
 // position
 void				get_target_position(t_stack **stack_a, t_stack **stack_b);

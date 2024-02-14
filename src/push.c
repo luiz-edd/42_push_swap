@@ -40,5 +40,4 @@ void	pb(t_stack **head_a, t_stack **head_b)
 	
 	if (push(head_b, head_a))
 		ft_printf("pb\n");
-	
 }

@@ -12,8 +12,6 @@
 
 #include "push_swap.h"
 
-
-
 int	get_target(t_stack **stack_a, int b_idx)
 {
 	int		target_pos;
@@ -50,13 +48,11 @@ void	get_position(t_stack *stack)
 	}
 }
 
-// 1 2 3 4 5 6
 void	get_target_position(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack *tmp;
 
 	tmp = *stack_b;
-	// stack_b_size = get_stack_len(*stack_b);
 	get_position(*stack_a);
 	get_position(*stack_b);
 	while (tmp)

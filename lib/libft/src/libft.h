@@ -89,6 +89,7 @@ float				ft_absolute(float a);
 float				ft_maxval(float a, float b);
 void				ft_print_words(char **str);
 long				ft_atol(char *str);
+void				ft_lstadd_back_arr(t_list **lst, void ***content);
 
 # ifndef FT_PRINTF_H
 #  define FT_PRINTF_H

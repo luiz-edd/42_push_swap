@@ -10,12 +10,11 @@ HEADER			= -I lib/libft/src -I src/
 SRC_FILES		= main.c \
 				  free_and_exit.c \
 				  index.c \
-				  stack_utils.c \
+				  stack.c \
 				  swap.c \
 				  push.c \
 				  rotate.c \
 				  reverse_rotate.c \
-				  sort_3.c \
 				  sort.c \
 				  position.c \
 				  cost.c \
@@ -81,13 +80,13 @@ test10: all
 	@./push_swap $(ARG) | wc -l
 
 test100: all
-	$(eval ARG = $(shell shuf -i -5000-5000 -n 100))
+	$(eval ARG = $(shell shuf -i 5000-5000 -n 100))
 	./push_swap $(ARG) | ./checker_linux $(ARG)
 	@echo -n "Instructions: "
 	@./push_swap $(ARG) | wc -l
 
 test500: all    
-	$(eval ARG = $(shell shuf -i 0-5000 -n 10000))
+	$(eval ARG = $(shell shuf -i 0-5000 -n 500))
 	./push_swap $(ARG) | ./checker_linux $(ARG)
 	@echo -n "Instructions: "
 	@./push_swap $(ARG) | wc -l
@@ -98,3 +97,17 @@ mytest500: all
 	@echo -n "Instructions: "
 	@./push_swap $(ARG) | wc -l
 
+val1: all
+	$(eval ARG = $(shell shuf -i 0-5000 -n 500))
+	valgrind  --leak-check=full --show-leak-kinds=all --track-origins=yes --vgdb=yes ./push_swap $(ARG)
+
+val2: all
+	$(eval ARG = $(shell shuf -i 0-5000 -n 2))
+	valgrind  --leak-check=full --show-leak-kinds=all --track-origins=yes --vgdb=yes ./push_swap $(ARG)
+
+val3: all
+	$(eval ARG = $(shell shuf -i 0-5000 -n 3))
+	valgrind  --leak-check=full --show-leak-kinds=all --track-origins=yes --vgdb=yes ./push_swap $(ARG)
+
+val4: all
+	valgrind  --leak-check=full --show-leak-kinds=all --track-origins=yes --vgdb=yes ./push_swap 43 gdf -232

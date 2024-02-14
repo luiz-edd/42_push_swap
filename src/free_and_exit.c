@@ -12,32 +12,22 @@
 
 #include "push_swap.h"
 
-void	free_stack(t_stack **stack)
+t_list	**get_lst(void)
 {
-	t_stack	*tmp;
+	static t_list	*lst = NULL;
 
-	if (stack != NULL)
-	{
-		while ((*stack) != NULL)
-		{
-			tmp = (*stack)->next;
-			free(*stack);
-			*stack = tmp;
-		}
-	}
+	return (&lst);
 }
 
-void	exit_error(t_stack **stack_a, t_stack **stack_b)
+void	exit_error(void)
 {
-	free_stack(stack_a);
-	free_stack(stack_b);
+	ft_lstclear(get_lst(), &free);
 	ft_printf("Error\n");
 	exit(EXIT_FAILURE);
 }
 
-void	exit_success(t_stack **stack_a, t_stack **stack_b)
+void	exit_success(void)
 {
-	free_stack(stack_a);
-	free_stack(stack_b);
+	ft_lstclear(get_lst(), &free);
 	exit(EXIT_SUCCESS);
 }

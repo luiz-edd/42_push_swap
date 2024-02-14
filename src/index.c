@@ -12,7 +12,6 @@
 
 #include "push_swap.h"
 
-// 5 20 35 90 2 -1
 void	assign_index(t_stack *stack, int stack_size)
 {
 	t_stack	*head;
