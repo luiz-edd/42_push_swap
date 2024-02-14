@@ -62,7 +62,7 @@ char	**validate_args(int argc, char **argv)
 	if (argc == 2)
 	{
 		argv = ft_split(argv[1], ' ');
-		ft_lstadd_back_arr(get_lst(), (void ***)&argv);
+		ft_collect_mem_arr((void ***)&argv);
 	}
 	else
 		argv = argv + 1;

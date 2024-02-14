@@ -110,4 +110,4 @@ val3: all
 	valgrind  --leak-check=full --show-leak-kinds=all --track-origins=yes --vgdb=yes ./push_swap $(ARG)
 
 val4: all
-	valgrind  --leak-check=full --show-leak-kinds=all --track-origins=yes --vgdb=yes ./push_swap 43 gdf -232
+	valgrind  --leak-check=full --show-leak-kinds=all --track-origins=yes --vgdb=yes ./push_swap "1 2 3"

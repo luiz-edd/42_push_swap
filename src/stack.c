@@ -46,7 +46,7 @@ t_stack	*new_stack(int value)
 	t_stack	*new;
 
 	new = (t_stack *)malloc(sizeof(t_stack));
-	ft_lstadd_back(get_lst(), ft_lstnew(new));
+	ft_collect_mem(new);
 	new->value = value;
 	new->index = -1;
 	new->position = -1;

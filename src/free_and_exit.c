@@ -12,22 +12,15 @@
 
 #include "push_swap.h"
 
-t_list	**get_lst(void)
-{
-	static t_list	*lst = NULL;
-
-	return (&lst);
-}
-
 void	exit_error(void)
 {
-	ft_lstclear(get_lst(), &free);
+	ft_free_memory();
 	ft_printf("Error\n");
 	exit(EXIT_FAILURE);
 }
 
 void	exit_success(void)
 {
-	ft_lstclear(get_lst(), &free);
+	ft_free_memory();
 	exit(EXIT_SUCCESS);
 }

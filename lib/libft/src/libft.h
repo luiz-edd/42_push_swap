@@ -71,6 +71,24 @@ void				ft_putchar_fd(char point, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+
+char				*get_next_line(int fd);
+int					ft_wordcount(char *str, char delimiter);
+void				ft_freepp(char **arr);
+unsigned int		ft_atoi_base(char *str, int str_base);
+float				ft_absolute(float a);
+float				ft_maxval(float a, float b);
+void				ft_print_words(char **str);
+long				ft_atol(char *str);
+
+// SPLIT_QUOTE
+void				ft_add_word(char *str, char delimiter, char *dst);
+int					ft_countwords_quote(char *str, char delimiter);
+int					ft_get_len(char *str, char delimiter);
+char				*ft_move_next_word(char *str, char delimiter);
+char				**ft_quote_split(char *str, char delimiter);
+
+// list utils
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 int					ft_lstsize(t_list *lst);
@@ -81,19 +99,16 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-char				*get_next_line(int fd);
-int					ft_wordcount(char *str, char delimiter);
-void				ft_freepp(char **arr);
-unsigned int		ft_atoi_base(char *str, int str_base);
-float				ft_absolute(float a);
-float				ft_maxval(float a, float b);
-void				ft_print_words(char **str);
-long				ft_atol(char *str);
 void				ft_lstadd_back_arr(t_list **lst, void ***content);
+
+// memory collector
+t_list				**ft_get_memory_lst(void);
+void				ft_collect_mem(void *content);
+void				ft_collect_mem_arr(void ***content);
+void				ft_free_memory(void);
 
 # ifndef FT_PRINTF_H
 #  define FT_PRINTF_H
-
 typedef struct s_format
 {
 	va_list			ap;
@@ -129,14 +144,6 @@ int					ft_print_ex(t_format *flags);
 int					ft_print_ex_up(t_format *flags);
 int					ft_print_pointer(t_format *flags);
 int					ft_print_unsigned(t_format *flags);
-
-// SPLIT_QUOTE
-void				ft_add_word(char *str, char delimiter, char *dst);
-int					ft_countwords_quote(char *str, char delimiter);
-int					ft_get_len(char *str, char delimiter);
-char				*ft_move_next_word(char *str, char delimiter);
-char				**ft_quote_split(char *str, char delimiter);
-
 # endif
 
 #endif

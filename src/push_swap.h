@@ -15,6 +15,7 @@
 # define PIPEX_H
 
 # include "../lib/libft/src/libft.h"
+# include <stdio.h>
 
 typedef struct s_stack
 {
@@ -37,7 +38,6 @@ t_stack				*get_last_node(t_stack *stack);
 // free_and_exit
 void				exit_error(void);
 void				exit_success(void);
-t_list				**get_lst(void);
 
 // index
 void				assign_index(t_stack *stack, int stack_size);
