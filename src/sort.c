@@ -18,11 +18,11 @@ void	sort_3(t_stack **stack)
 
 	highest = find_highest_index(*stack);
 	if ((*stack)->index == highest)
-		ra(stack);
+		ra(stack, PRINT);
 	else if ((*stack)->next->index == highest)
-		rra(stack);
+		rra(stack, PRINT);
 	if ((*stack)->index > (*stack)->next->index)
-		sa(stack);
+		sa(stack, PRINT);
 }
 
 int	is_sorted(t_stack *stack)
@@ -36,7 +36,7 @@ int	is_sorted(t_stack *stack)
 	return (1);
 }
 
-static void	shift_stack(t_stack **stack)
+static void	rotate_until_sorted(t_stack **stack)
 {
 	int	lowest_pos;
 	int	stack_size;
@@ -46,10 +46,10 @@ static void	shift_stack(t_stack **stack)
 	lowest_pos = get_minimum_index(*stack)->position;
 	if (lowest_pos >= stack_size / 2)
 		while ((*stack)->index != 0)
-			rra(stack);
+			rra(stack, PRINT);
 	else
 		while ((*stack)->index != 0)
-			ra(stack);
+			ra(stack, PRINT);
 }
 
 void	push_all_save_three(t_stack **stack_a, t_stack **stack_b,
@@ -66,16 +66,16 @@ void	push_all_save_three(t_stack **stack_a, t_stack **stack_b,
 	{
 		if ((*stack_a)->index <= middle_index)
 		{
-			pb(stack_a, stack_b);
+			pb(stack_a, stack_b, PRINT);
 			stack_size--;
 		}
 		else
-			ra(stack_a);
+			ra(stack_a, PRINT);
 		i++;
 	}
 	while (stack_size > 3)
 	{
-		pb(stack_a, stack_b);
+		pb(stack_a, stack_b, PRINT);
 		stack_size--;
 	}
 }
@@ -91,5 +91,5 @@ void	sort(t_stack **stack_a, t_stack **stack_b, int stack_a_size)
 		do_cheapest_move(stack_a, stack_b);
 	}
 	if (!is_sorted(*stack_a))
-		shift_stack(stack_a);
+		rotate_until_sorted(stack_a);
 }

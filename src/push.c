@@ -29,15 +29,16 @@ static int	push(t_stack **dst, t_stack **src)
 	return (1);
 }
 
-void	pa(t_stack **head_a, t_stack **head_b)
+void	pa(t_stack **head_a, t_stack **head_b, int to_print)
 {
 	if (push(head_a, head_b))
-		ft_printf("pa\n");
+		if (to_print == PRINT)
+			ft_printf("pa\n");
 }
 
-void	pb(t_stack **head_a, t_stack **head_b)
+void	pb(t_stack **head_a, t_stack **head_b, int to_print)
 {
-	
 	if (push(head_b, head_a))
-		ft_printf("pb\n");
+		if (to_print == PRINT)
+			ft_printf("pb\n");
 }

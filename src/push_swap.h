@@ -17,6 +17,9 @@
 # include "../lib/libft/src/libft.h"
 # include <stdio.h>
 
+# define PRINT 1
+# define NO_PRINT 0
+
 typedef struct s_stack
 {
 	int				value;
@@ -45,23 +48,23 @@ t_stack				*get_minimum_index(t_stack *stack);
 int					find_highest_index(t_stack *stack);
 
 // swap
-void				sa(t_stack **head);
-void				sb(t_stack **head);
-void				ss(t_stack **head_a, t_stack **head_b);
+void				sa(t_stack **head, int to_print);
+void				sb(t_stack **head, int to_print);
+void				ss(t_stack **head_a, t_stack **head_b, int to_print);
 
 // push
-void				pa(t_stack **head_a, t_stack **head_b);
-void				pb(t_stack **head_a, t_stack **head_b);
+void				pa(t_stack **head_a, t_stack **head_b, int to_print);
+void				pb(t_stack **head_a, t_stack **head_b, int to_print);
 
 // rotate
-void				ra(t_stack **head_a);
-void				rb(t_stack **head_b);
-void				rr(t_stack **head_a, t_stack **head_b);
+void				ra(t_stack **head_a, int to_print);
+void				rb(t_stack **head_b, int to_print);
+void				rr(t_stack **head_a, t_stack **head_b, int to_print);
 
 // reverse rotate
-void				rra(t_stack **head);
-void				rrb(t_stack **head);
-void				rrr(t_stack **head_a, t_stack **head_b);
+void				rra(t_stack **head, int to_print);
+void				rrb(t_stack **head, int to_print);
+void				rrr(t_stack **head_a, t_stack **head_b, int to_print);
 
 // sort
 void				sort(t_stack **stack_a, t_stack **stack_b,

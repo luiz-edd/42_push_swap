@@ -29,19 +29,25 @@ static int	reverse_rotate(t_stack **head)
 	return (1);
 }
 
-void	rra(t_stack **head)
+void	rra(t_stack **head, int to_print)
 {
 	if (reverse_rotate(head))
-		ft_printf("rra\n");
+	{
+		if (to_print == PRINT)
+			ft_printf("rra\n");
+	}
 }
 
-void	rrb(t_stack **head)
+void	rrb(t_stack **head, int to_print)
 {
 	if (reverse_rotate(head))
-		ft_printf("rrb\n");
+	{
+		if (to_print == PRINT)
+			ft_printf("rrb\n");
+	}
 }
 
-void	rrr(t_stack **head_a, t_stack **head_b)
+void	rrr(t_stack **head_a, t_stack **head_b, int to_print)
 {
 	if (head_a == NULL || *head_a == NULL || (*head_a)->next == NULL)
 		return ;
@@ -49,5 +55,6 @@ void	rrr(t_stack **head_a, t_stack **head_b)
 		return ;
 	reverse_rotate(head_a);
 	reverse_rotate(head_b);
-	ft_printf("rrr\n");
+	if (to_print == PRINT)
+		ft_printf("rrr\n");
 }

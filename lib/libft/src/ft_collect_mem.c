@@ -21,5 +21,6 @@ void	ft_collect_mem_arr(void ***content)
 
 void	ft_free_memory(void)
 {
+	get_next_line(-1);
 	ft_lstclear(ft_get_memory_lst(), &free);
 }

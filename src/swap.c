@@ -31,19 +31,21 @@ static int	swap(t_stack **head)
 	return (1);
 }
 
-void	sa(t_stack **head)
+void	sa(t_stack **head, int to_print)
 {
 	if (swap(head))
-		ft_printf("sa\n");
+		if (to_print == PRINT)
+			ft_printf("sa\n");
 }
 
-void	sb(t_stack **head)
+void	sb(t_stack **head, int to_print)
 {
 	if (swap(head))
-		ft_printf("sb\n");
+		if (to_print == PRINT)
+			ft_printf("sb\n");
 }
 
-void	ss(t_stack **head_a, t_stack **head_b)
+void	ss(t_stack **head_a, t_stack **head_b, int to_print)
 {
 	if (*head_a == NULL || (*head_a)->next == NULL)
 		return ;
@@ -51,5 +53,6 @@ void	ss(t_stack **head_a, t_stack **head_b)
 		return ;
 	swap(head_a);
 	swap(head_b);
-	ft_printf("ss\n");
+	if (to_print == PRINT)
+		ft_printf("ss\n");
 }

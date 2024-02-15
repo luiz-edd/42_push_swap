@@ -57,7 +57,7 @@ void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 	if (is_sorted(*stack_a) != 1)
 	{
 		if (stack_size == 2)
-			sa(stack_a);
+			sa(stack_a, PRINT);
 		else if (stack_size == 3)
 			sort_3(stack_a);
 		else
