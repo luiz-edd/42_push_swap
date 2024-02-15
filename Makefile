@@ -35,7 +35,7 @@ OBJ				= $(addprefix $(OBJ_FOLDER), $(OBJ_FILES))
 OBJ_BONUS 		= $(addprefix $(OBJ_FOLDER), $(OBJ_FILES_BONUS))
 
 SRC_BONUS_MAIN = src_bonus/main_bonus.c
-OBJ_BONUS_MAIN = src_bonus/obj/main_bonus.o
+OBJ_BONUS_MAIN = src_bonus/main_bonus.o
 
 all: libft $(NAME)
 
@@ -51,14 +51,11 @@ $(OBJ_FOLDER)%.o: $(SRC_FOLDER)%.c
 
 # bonus
 bonus: all $(NAME_BONUS)
-	$(CC) src_bonus/main_bonus.c $(OBJ_BONUS) $(LIBFT) $(HEADER) -o $(NAME_BONUS)
-	
 
 $(NAME_BONUS): $(OBJ_BONUS_MAIN)
-	$(CC) $(OBJ_BONUS_MAIN) $(OBJ) $(LIBFT) $(HEADER) -o $(NAME)
+	$(CC) $(OBJ_BONUS_MAIN) $(OBJ_BONUS) $(LIBFT) $(HEADER) -o $(NAME_BONUS)
 
-$(OBJ_BONUS_MAIN)%.o: $(SRC_BONUS_MAIN)%.o
-	@mkdir -p $(OBJ_FOLDER)
+$(OBJ_BONUS_MAIN): $(SRC_BONUS_MAIN)
 	$(CC) $< -o $@ -c $(HEADER)
 
 
@@ -66,11 +63,10 @@ $(OBJ_BONUS_MAIN)%.o: $(SRC_BONUS_MAIN)%.o
 # utils 
 clean:
 	@rm -rf obj
+	@rm src_bonus/main_bonus.o
 	@make -C $(LIBFT_PATH) clean
 
 fclean: clean
-	@rm -rf obj
-	@rm -rf obj_bonus
 	@rm -rf push_swap
 	@rm -rf checker
 	@make -C $(LIBFT_PATH) fclean
@@ -167,6 +163,6 @@ val6: all
 	$(eval ARG = $(shell shuf -i 0-5000 -n 3))
 	valgrind  --leak-check=full --show-leak-kinds=all --track-origins=yes --vgdb=yes ./checker $(ARG)
 
-val7: all
+val7: all bonus
 	$(eval ARG = $(shell shuf -i 0-5000 -n 1000))
 	valgrind  --leak-check=full --show-leak-kinds=all --track-origins=yes --vgdb=yes ./push_swap $(ARG) | ./checker $(ARG)
