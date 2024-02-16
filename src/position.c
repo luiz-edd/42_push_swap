@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 12:27:00 by leduard2          #+#    #+#             */
-/*   Updated: 2024/02/05 16:11:36 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/02/16 16:53:02 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	get_position(t_stack *stack)
 
 void	get_target_position(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = *stack_b;
 	get_position(*stack_a);

@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 15:32:55 by leduard2          #+#    #+#             */
-/*   Updated: 2024/01/29 14:27:02 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/02/16 16:57:44 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ void				ft_free_memory(void);
 
 # ifndef FT_PRINTF_H
 #  define FT_PRINTF_H
+
 typedef struct s_format
 {
 	va_list			ap;

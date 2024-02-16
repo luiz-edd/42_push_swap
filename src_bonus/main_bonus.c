@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/16 16:53:55 by leduard2          #+#    #+#             */
+/*   Updated: 2024/02/16 16:59:01 by leduard2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../src/push_swap.h"
 
@@ -46,42 +57,18 @@ void	read_and_move(t_stack **stack_a, t_stack **stack_b)
 			has_input = 1;
 		}
 	}
-	if(!has_input)
+	if (!has_input)
 		exit_error();
 }
 
-// void	read_and_move(t_stack **stack_a, t_stack **stack_b)
-// {
-// 	char	*buffer;
-// 	int		i;
-
-// 	buffer = (char *)ft_calloc(4, 1);
-// 	ft_collect_mem(buffer);
-// 	i = 0;
-// 	while (i < 4 && read(0, &buffer[i], 1) == 1)
-// 	{
-// 		if (buffer[i] == '\n')
-// 		{
-// 			apply_move(stack_a, stack_b, buffer);
-// 			ft_bzero(buffer, 4);
-// 			i = 0;
-// 		}
-// 		else
-// 			i++;
-// 	}
-// 	// if (i >= 4)
-// 	// 	exit_error();
-// }
-
 int	main(int argc, char **argv)
 {
-	t_stack *stack_a;
-	t_stack *stack_b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
 	argv = validate_args(argc, argv);
 	stack_a = create_stack(argv);
 	stack_b = NULL;
-
 	read_and_move(&stack_a, &stack_b);
 	if (is_sorted(stack_a))
 		ft_printf("OK\n");
