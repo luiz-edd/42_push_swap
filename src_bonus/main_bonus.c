@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:53:55 by leduard2          #+#    #+#             */
-/*   Updated: 2024/02/16 16:59:01 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:36:52 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,7 @@ void	apply_move(t_stack **stack_a, t_stack **stack_b, char *movement)
 void	read_and_move(t_stack **stack_a, t_stack **stack_b)
 {
 	char	*line;
-	int		has_input;
 
-	has_input = 0;
 	line = "";
 	while (line)
 	{
@@ -54,11 +52,8 @@ void	read_and_move(t_stack **stack_a, t_stack **stack_b)
 		{
 			ft_collect_mem(line);
 			apply_move(stack_a, stack_b, line);
-			has_input = 1;
 		}
 	}
-	if (!has_input)
-		exit_error();
 }
 
 int	main(int argc, char **argv)

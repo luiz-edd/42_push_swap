@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 15:32:55 by leduard2          #+#    #+#             */
-/*   Updated: 2024/02/19 09:47:35 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/02/19 13:53:29 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,12 +99,12 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-void				ft_lstadd_back_arr(t_list **lst, void ***content);
+void				ft_lstadd_back_arr(t_list **lst, void **content);
 
 // memory collector
 t_list				**ft_get_memory_lst(void);
 void				ft_collect_mem(void *content);
-void				ft_collect_mem_arr(void ***content);
+void				ft_collect_mem_arr(void **content);
 void				ft_free_memory(void);
 void				*ft_dalloc(size_t nmemb, size_t size);
 

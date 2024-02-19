@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:28:25 by leduard2          #+#    #+#             */
-/*   Updated: 2024/01/29 18:04:37 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/02/19 11:39:38 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	exit_error(void)
 {
 	ft_free_memory();
-	ft_printf("Error\n");
+	write(2, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }
 

@@ -164,5 +164,8 @@ val6: all
 	valgrind  --leak-check=full --show-leak-kinds=all --track-origins=yes --vgdb=yes ./checker $(ARG)
 
 val7: all bonus
-	$(eval ARG = $(shell shuf -i 0-5000 -n 1000))
+	$(eval ARG = $(shell shuf -i 0-5000 -n 500))
 	valgrind  --leak-check=full --show-leak-kinds=all --track-origins=yes --vgdb=yes ./push_swap $(ARG) | ./checker $(ARG)
+
+val8: all bonus
+	valgrind  --leak-check=full --show-leak-kinds=all --track-origins=yes --vgdb=yes ./checker "-01 -001"

@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:56:31 by leduard2          #+#    #+#             */
-/*   Updated: 2024/02/19 09:47:43 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/02/19 13:53:06 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_collect_mem(void *content)
 	ft_lstadd_back(ft_get_memory_lst(), ft_lstnew(content));
 }
 
-void	ft_collect_mem_arr(void ***content)
+void	ft_collect_mem_arr(void **content)
 {
 	ft_lstadd_back_arr(ft_get_memory_lst(), content);
 }

@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:53:31 by leduard2          #+#    #+#             */
-/*   Updated: 2024/02/16 16:53:35 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/02/19 11:50:35 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ static void	verify_digits(char **argv)
 	while (argv[i])
 	{
 		j = 0;
+		if (argv[i][j] == '+' || argv[i][j] == '-')
+			j++;
 		if (argv[i][j] == '\0')
 			exit_error();
 		while (argv[i][j])
 		{
-			if (argv[i][j] == '+' || argv[i][j] == '-')
-				j++;
 			if (ft_isdigit(argv[i][j]) != 1)
 				exit_error();
 			j++;
@@ -73,7 +73,7 @@ char	**validate_args(int argc, char **argv)
 	if (argc == 2)
 	{
 		argv = ft_split(argv[1], ' ');
-		ft_collect_mem_arr((void ***)&argv);
+		ft_collect_mem_arr((void **)argv);
 	}
 	else
 		argv = argv + 1;
