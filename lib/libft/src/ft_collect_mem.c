@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:56:31 by leduard2          #+#    #+#             */
-/*   Updated: 2024/02/16 16:56:34 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/02/19 09:47:43 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ t_list	**ft_get_memory_lst(void)
 {
 	static t_list	*lst;
 
-	lst = NULL;
 	return (&lst);
 }
 
@@ -34,4 +33,13 @@ void	ft_free_memory(void)
 {
 	get_next_line(-1);
 	ft_lstclear(ft_get_memory_lst(), &free);
+}
+
+void	*ft_dalloc(size_t nmemb, size_t size)
+{
+	void	*p;
+
+	p = ft_calloc(nmemb, size);
+	ft_collect_mem(p);
+	return (p);
 }

@@ -63,7 +63,7 @@ $(OBJ_BONUS_MAIN): $(SRC_BONUS_MAIN)
 # utils 
 clean:
 	@rm -rf obj
-	@rm src_bonus/main_bonus.o
+	@rm -rf src_bonus/main_bonus.o
 	@make -C $(LIBFT_PATH) clean
 
 fclean: clean
