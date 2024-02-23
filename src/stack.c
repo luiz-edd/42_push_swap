@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 13:46:23 by leduard2          #+#    #+#             */
-/*   Updated: 2024/02/19 13:55:34 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/02/23 10:25:59 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ t_stack	*new_stack(int value)
 {
 	t_stack	*new;
 
-	// new = (t_stack *)malloc(sizeof(t_stack));
-	// ft_collect_mem(new);
 	new = (t_stack *)ft_dalloc(1, sizeof(t_stack));
 	new->value = value;
 	new->index = -1;

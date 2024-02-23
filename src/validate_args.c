@@ -6,7 +6,7 @@
 /*   By: leduard2 <leduard2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:53:31 by leduard2          #+#    #+#             */
-/*   Updated: 2024/02/19 11:50:35 by leduard2         ###   ########.fr       */
+/*   Updated: 2024/02/23 11:44:30 by leduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ static void	verify_duplicates(char **argv)
 
 char	**validate_args(int argc, char **argv)
 {
+	if (argc == 1)
+		exit(0);
 	if (argc < 2)
 		exit_error();
 	if (argc == 2)
